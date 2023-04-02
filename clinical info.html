@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical System Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <style>
+        .logout{
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            margin-right: 50px;
+        }
+
+        .content{
+            margin: 0px 50px 50px 50px;
+        }
+    </style>
+</head>
+<body class="container-fluid p-0" style="background-image: url(clinical\ system.jpg);">
+    <form action="#" id="forms">
+    <div class="m-2 border border-2 border-primary" style="background-color: rgba(30, 255, 229, 0.128);">
+        <h2 style="text-align: center; color: white;" >Medical Information</h2>
+    </div>
+
+    <div class="container me-5 ms-5 mt-3 content row" style="color: whitesmoke;">
+        <div class="logout col-12" >
+            <button type="submit" id="logout" name="logout" >Logout</button>
+        </div>
+
+        <h3 class="col-12">Patient Form:</h3>
+        <p class="col-12 ms-1">Personal Informtion</p>
+
+        <div>
+        <label for="firstName" class="col-3 ms-4">First Name</label>
+        <label for="middleName" class="col-3 ms-4">Middle Name</label>
+        <label for="lastName" class="col-3 ms-4">Last Name</label>
+            
+        <input type="text" name="firstName" id="firstName" class="col-3 me-4 ms-4">
+        <input type="text" name="firstName" id="middleName" class="col-3 me-4">
+        <input type="text" name="firstName" id="lastName" class="col-3">
+        </div>
+
+        <div class="mt-2">
+            <label for="address" class="col-12 ms-4">Address</label>
+            <div style="margin-right: 170px;">
+            <input type="text" name="address" id="address" class="col-12 ms-4">
+            </div>
+        </div>
+
+        <div class="mt-2 ">
+            <label for="mobileNumber" class="col-3 ms-4">Mobile Number</label>
+            <label for="birthday" class="col-3 ms-4">Birthday</label>
+            <label for="gender" class="col-3 ms-4">Gender</label>
+
+
+            
+            <input class="col-3 ms-4" type="text" name="pNumber" id="pNumber" placeholder="11 digit no. (09xxxxxxxxxx)">
+            <input class="col-3 ms-4" type="date" name="birthday" id="birthday">
+            
+            <label for="male" class="ms-4 me-0" >Male :</label>
+            <input type="radio" name="gender" id="male" value="male">
+
+            <label for="female" class="ms-4 me-0">Female :</label>
+            <input type="radio" name="gender" id="female" value="female">
+
+
+
+        </div>
+
+
+        <div class="row">
+            <p class="col-12 ms-1 mt-4">Medical Informtion:</p>
+            <label for="medicalHistory" class="col-3 ms-4">Medical History:</label>
+            <label for="currentSymptoms" class="col-3 ms-4">Current Symptoms:</label>
+            <label for="qMedication" class="col-3 ms-4">Are you taking medications:</label>
+        </div>
+
+        <div class="row">
+            <div class="col-3 ms-4 mt-2 row">
+                <div>
+                    <input type="checkbox" name="medicalHistory[]" id="asthma" class="p-0" value="asthma">
+                    <label for="" >Asthma</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="medicalHistory[]" id="cancer" value="cancer">
+                    <label for="" >Cancer</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="medicalHistory[]" id="cadiacD" value="cardiacdisease">
+                    <label for="" >Cardiac Disease</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="medicalHistory[]" id="diabetes" value="diabetes">
+                    <label for="" >Diabetes</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="medicalHistory[]" id="hypertension" value="hypertension">
+                    <label for="" >Hypertension</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" name="medicalHistory[]" id="pDisorder" value="pyschiatricDisorder">
+                    <label for="" >Psychiatric Disorder</label>
+                </div>
+            </div>
+
+            <div class="col-3 ms-4 row">
+                <select name="currentSymptoms" id="currentSymptoms" class="form-select form-select-lg" style="margin: 10px 5px 250px 10px; padding: 0px;">
+                    <option value="chestPain" selected>Chest Pain</option>
+                    <option value="respiratory">Respiratory</option>
+                    <option value="hematological">Hematological</option>
+                    <option value="lympatic">Lympatic</option>
+                </select>
+            </div>
+
+            <div class="col-3 ms-4 row">
+                <div class="ms-4">
+                    <input type="radio" name="check" value="yes" onclick="choose()">
+                    <label for="" >Yes</label>
+
+                    <input type="radio" name="check" value="no" onclick="choose()">
+                    <label for="" >No</label>
+
+                    <textarea name="comments" id="comments" cols="30" rows="10" ></textarea>
+                </div> 
+
+            </div>
+        </div>
+
+        <div class="mt-2" style="text-align: center;">
+            <button type="submit" value="submit">Submit</button>
+            <button type="submit" value="reset">reset</button>
+        </div>
+    </div>
+    </form>
+
+    <script src="info.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>
